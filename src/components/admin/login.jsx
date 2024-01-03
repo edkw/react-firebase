@@ -3,9 +3,12 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged
 } from "firebase/auth";
-import { auth } from "../FirebaseConfig.js";
+import { auth } from "./../../FirebaseConfig.js";
 /* 「Link」をimport↓ */
 import { Navigate, Link } from "react-router-dom";
+
+import Header from './header';
+import Footer from './footer';
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -36,9 +39,10 @@ const Login = () => {
   return (
     <>
       {user ? (
-        <Navigate to={`/`} />
+        <Navigate to={`./`} />
       ) : (
         <>
+        {/*<Header/>*/}
           <h1>ログインページ</h1>
           <form onSubmit={handleSubmit}>
             <div>
@@ -65,6 +69,7 @@ const Login = () => {
           </form>
         </>
       )}
+      {/*<Footer/>*/}
     </>
   );
 };

@@ -1,6 +1,10 @@
-function Home() {
+import Footer from "./footer";
+import Header from "./header";
+
+function Front() {
     return (
         <>
+        <Header/>
             {/*<!-- Page content-->*/}
             <div className="container">
                 <div className="row">
@@ -120,10 +124,10 @@ function Home() {
                 </div>
             </div>
 
-
+        <Footer/>
         </>
 
     );
 }
 
-export default Home;
+export default Front;

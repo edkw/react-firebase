@@ -1,11 +1,4 @@
-import { NavLink } from 'react-router-dom';
-//import React, { useState, useEffect } from "react";
-//import { onAuthStateChanged, signOut } from "firebase/auth";
-//import { auth } from "../FirebaseConfig.js";
-import {
-    useNavigate,
-    Navigate
-} from "react-router-dom";
+import { NavLink, useLocation } from 'react-router-dom';
 
 function Header() {
 
