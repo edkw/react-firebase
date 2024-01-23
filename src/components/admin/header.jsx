@@ -1,9 +1,53 @@
 import { NavLink, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "./../../FirebaseConfig.js";
+import {
+    useNavigate,
+    Navigate
+} from "react-router-dom";
 
 function Header() {
+    const [user, setUser] = useState("");
+
+    const [loading, setLoading] = useState(true);
+
+    const pathname = useLocation().pathname;
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setLoading(false);
+        });
+    }, []);
+
+    const navigate = useNavigate();
+
+    const logout = async () => {
+        await signOut(auth);
+        navigate("/admin/login");
+    }
 
     return (
+
         <>
+
+            <>
+                {!loading && (
+                    <>
+                        {!user ? (
+                            <Navigate to={`/admin/login`} />
+                        ) : (
+                            <>
+                                <h1>マイページ</h1>
+                                <p>{user?.email}</p>
+                                <button onClick={logout}>ログアウト</button>
+                            </>
+                        )}
+                    </>
+                )}
+            </>
+
             {/*<!-- Responsive navbar-->*/}
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">

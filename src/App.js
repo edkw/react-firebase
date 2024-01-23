@@ -15,7 +15,7 @@ import Terms from './components/terms';
 import Register from './components/register';
 //import Login from './components/admin';
 
-import Admin from './components/top';
+import Admin from './components/admin/admin.jsx';
 import Front from './components/front';
 
 function App() {
@@ -25,9 +25,9 @@ function App() {
             {/*<Header />*/}
 
             <Routes>
-            <Route path="/" element={<Front />} />
+                <Route path="/*" element={<Front />} />
                 <Route path="/admin/*" element={<Admin />} />
-                
+
                 {/*}
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact message="Hello Contact" />} />
