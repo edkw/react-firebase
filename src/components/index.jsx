@@ -2,6 +2,7 @@ import Footer from "./footer";
 import Header from "./header";
 
 function Front() {
+    console.log('index');
     return (
         <>
         <Header/>

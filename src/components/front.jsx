@@ -12,9 +12,9 @@ import Index from './index.jsx';
 //import Dashboard from './dashboard.jsx';
 //import User from './user.jsx';
 
-const Admin = () => {
+const Front = () => {
 
-
+console.log('real front');
   return (
 
     <Routes>
@@ -26,4 +26,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Front;

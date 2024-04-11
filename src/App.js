@@ -1,6 +1,8 @@
 //import logo from './logo.svg';
 import './App.css';
 
+
+
 import { Routes, Route } from 'react-router-dom';
 
 //import Header from './components/header';
@@ -18,6 +20,7 @@ import Register from './components/register';
 import Admin from './components/admin/admin.jsx';
 import Front from './components/front';
 
+
 function App() {
     return (
         <div>
@@ -25,6 +28,9 @@ function App() {
             {/*<Header />*/}
 
             <Routes>
+
+            
+            <Route path="/about" element={<About />} />
                 <Route path="/*" element={<Front />} />
                 <Route path="/admin/*" element={<Admin />} />
 
