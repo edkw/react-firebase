@@ -5,16 +5,16 @@ import { auth } from "./../../FirebaseConfig.js";
 import {
   useNavigate,
   Navigate,
-  useResolvedPath,
-  useMatch,
+  //useResolvedPath,
+  //useMatch,
 } from "react-router-dom";
 
 function Home() {
-  let resolved = useResolvedPath("/admin/login");
-  let match = useMatch({
-    path: resolved.pathname,
-    end: true,
-  });
+  //let resolved = useResolvedPath("/admin/login");
+  //let match = useMatch({
+  //  path: resolved.pathname,
+  //  end: true,
+  //});
 
   const [user, setUser] = useState("");
 
@@ -45,7 +45,7 @@ function Home() {
               <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
                 <a
                   className="navbar-brand col-md-3 col-lg-2 me-0 px-3"
-                  href="#"
+                  href="./"
                 >
                   React-Firebase CMS
                 </a>
@@ -75,20 +75,20 @@ function Home() {
                           <a
                             className="nav-link active"
                             aria-current="page"
-                            href="#"
+                            href="./"
                           >
                             <span data-feather="home"></span>
                             Dashboard
                           </a>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="#">
+                          <a className="nav-link" href="./">
                             <span data-feather="file"></span>
                             Posts
                           </a>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="#">
+                          <a className="nav-link" href="./">
                             <span data-feather="shopping-cart"></span>
                             Users
                           </a>
