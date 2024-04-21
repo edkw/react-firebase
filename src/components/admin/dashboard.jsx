@@ -8,6 +8,7 @@ import {
   //useResolvedPath,
   //useMatch,
 } from "react-router-dom";
+import ReactLoading from "react-loading";
 
 function Home() {
   //let resolved = useResolvedPath("/admin/login");
@@ -34,9 +35,17 @@ function Home() {
     navigate("/admin/login");
   };
 
+  const containerStyle = {
+    height: "100vh",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
   return (
     <>
-      {!loading && (
+      {!loading ? (
         <>
           {!user ? (
             <Navigate to={`/admin/login`} />
@@ -134,6 +143,18 @@ function Home() {
               </div>
             </>
           )}
+        </>
+      ) : (
+        <>
+          <div style={containerStyle}>
+            <ReactLoading
+              type="spin"
+              color="black"
+              height="200px"
+              width="200px"
+              className="mx-auto"
+            />
+          </div>
         </>
       )}
     </>
