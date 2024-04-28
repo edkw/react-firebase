@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../FirebaseConfig.js";
 /* 「Link」をimport↓ */
 import { Navigate, Link } from "react-router-dom";
+import "./login.css";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
