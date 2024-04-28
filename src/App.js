@@ -13,6 +13,8 @@ import Terms from './components/terms';
 import Register from './components/register';
 import Dashboard from './components/admin/dashboard';
 import Login from './components/admin/login';
+import APosts from './components/admin/posts';
+import Blog from './components/blog';
 
 function App() {
     return (
@@ -24,11 +26,14 @@ function App() {
                 <Route path="/posts" element={<Posts />} >
                     <Route path=":postId" element={<Post />} />
                 </Route>
-                <Route path="/terms" element={<Terms />} ></Route>
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="/*" element={<NoMatch />} />
                 <Route path="/register" element={<Register />} ></Route>
 
-                <Route path="/admin" element={<Dashboard />} />
+                <Route path="/admin" element={<Dashboard />} >
+                    <Route path="posts" element={<APosts />} />
+                </Route>
                 <Route path="/admin/login" element={<Login />} />
 
             </Routes>

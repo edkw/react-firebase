@@ -11,7 +11,7 @@ function Header() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <a className="navbar-brand" href="#!">
-            Start Bootstrap
+            Free Web Tools
           </a>
           <button
             className="navbar-toggler"
@@ -76,22 +76,20 @@ function Header() {
                   Terms
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav-link" : "nav-link"
+                  }
+                  to="/blog"
+                >
+                  Blog
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
-
-      {/*<!-- Page header with logo and tagline-->*/}
-      <header className="py-5 bg-light border-bottom mb-4">
-        <div className="container">
-          <div className="text-center my-5">
-            <h1 className="fw-bolder">Welcome to Blog Home!</h1>
-            <p className="lead mb-0">
-              A Bootstrap 5 starter layout for your next blog homepage
-            </p>
-          </div>
-        </div>
-      </header>
     </>
   );
 }
