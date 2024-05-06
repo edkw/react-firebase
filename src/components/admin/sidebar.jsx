@@ -1,6 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { auth } from "./../../FirebaseConfig.js";
+import { onAuthStateChanged } from "firebase/auth";
+import { signOut } from "firebase/auth";
 
 function Sidebar() {
+  const [user, setUser] = useState("");
+
+  const navigate = useNavigate();
+
+  const logout = async () => {
+    await signOut(auth);
+    navigate("/admin/login");
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  }, []);
+
   return (
     <>
       <nav
@@ -10,22 +29,34 @@ function Sidebar() {
         <div className="position-sticky pt-3">
           <ul className="nav flex-column">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="./">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                to=""
+              >
                 <span data-feather="home"></span>
                 Dashboard
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="./post">
+              <NavLink className="nav-link" to="./posts">
                 <span data-feather="file"></span>
                 Posts
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="./">
+              <NavLink className="nav-link" to="./users">
                 <span data-feather="shopping-cart"></span>
                 Users
               </NavLink>
+            </li>
+            <li className="nav-item">
+              {user && (
+                <NavLink className="nav-link px-3" to="#" onClick={logout}>
+                  Sign out
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>

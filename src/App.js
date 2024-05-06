@@ -1,5 +1,9 @@
 //import logo from './logo.svg';
 import './App.css';
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -14,6 +18,7 @@ import Register from './components/register';
 import Dashboard from './components/admin/dashboard';
 import Login from './components/admin/login';
 import APosts from './components/admin/posts';
+import Users from './components/admin/users';
 import Blog from './components/blog';
 
 function App() {
@@ -33,6 +38,7 @@ function App() {
 
                 <Route path="/admin" element={<Dashboard />} >
                     <Route path="posts" element={<APosts />} />
+                    <Route path="users" element={<Users />} />
                 </Route>
                 <Route path="/admin/login" element={<Login />} />
 
