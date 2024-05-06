@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Header from "./../components/header";
 import Footer from "./../components/footer";
 import LoginModal from "./login_modal";
@@ -61,7 +62,7 @@ function Home() {
             <button onClick={ShowClockModal} className="card-link">
               <div className="card card-minimal category-box text-center">
                 <div className="card-body justify-content-center">
-                  <i className="fa-solid fa-display"></i>
+                  <i className="fa-solid fa-clock"></i>
                   <h4 className="card-title">Digital Clock</h4>
                 </div>
               </div>
@@ -86,11 +87,23 @@ function Home() {
             <button onClick={ShowPasswordModal} className="card-link">
               <div className="card card-minimal category-box text-center">
                 <div className="card-body justify-content-center">
-                  <i className="fa-solid fa-display"></i>
+                  <i className="fa-solid fa-lock"></i>
                   <h4 className="card-title">Password Generator</h4>
                 </div>
               </div>
             </button>
+          </div>
+          <div className="col-sm-12 col-md-6 col-lg-4 mb-3">
+            <NavLink to="./posts">
+              <button as="a" href="./posts" className="card-link">
+                <div className="card card-minimal category-box text-center">
+                  <div className="card-body justify-content-center">
+                    <i className="fa-solid fa-table-list"></i>
+                    <h4 className="card-title">Posts</h4>
+                  </div>
+                </div>
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>
