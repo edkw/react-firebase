@@ -84,33 +84,6 @@ const Login = () => {
                   </button>
                 </form>
               </main>
-
-              <h1>ログインページaaaa</h1>
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <label>メールアドレス</label>
-                  <input
-                    name="email"
-                    type="email"
-                    value={loginEmail}
-                    onChange={(e) => setLoginEmail(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label>パスワード</label>
-                  <input
-                    name="password"
-                    type="password"
-                    value={loginPassword}
-                    onChange={(e) => setLoginPassword(e.target.value)}
-                  />
-                </div>
-                <button>ログイン</button>
-                {/* ↓リンクを追加 */}
-                <p>
-                  新規登録は<Link to={`/register/`}>こちら</Link>
-                </p>
-              </form>
             </>
           )}
         </>
