@@ -20,6 +20,7 @@ import Login from './components/admin/login';
 import APosts from './components/admin/posts';
 import Users from './components/admin/users';
 import Blog from './components/blog';
+import Chat from './components/chat';
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                 </Route>
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/blog" element={<Blog />} />
+                <Route path="/chat" element={<Chat />} />
                 <Route path="/*" element={<NoMatch />} />
                 <Route path="/register" element={<Register />} ></Route>
 
